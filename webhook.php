@@ -19,7 +19,7 @@ function processRequest($text)
 	$text = trim($text);
 	$text = strtolower($text);
 	$response = "";
-	if($text=="Promo City")
+	if($text=="Kikko Promo City")
 	{
 		$response = "Lei puo aderire alle Promo City se risiede tra le seguenti zone:
 
