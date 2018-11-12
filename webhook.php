@@ -9,10 +9,30 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text)
 	{
-		$bot->sendTextMessage($recipientId, $message->text);
+		$response = processRequest($message->text);
+		$bot->sendTextMessage($recipientId, $response);
 	}
-	elseif($message->attachments)
+}
+
+function processRequest($text)
+{
+	$text = trim($text);
+	$text = strtolower($text);
+	$response = "";
+	if($text=="Promo City")
 	{
-		$bot->sendTextMessage($recipientId, "Attachment received");
+		$response = "Lei puo aderire alle Promo City se risiede tra le seguenti zone:
+
+Provincia di Salerno,
+Potenza città.
+Taranto città.
+Reggio Calabria città
+
+Le invio la brochure con le nostre offerte.";
 	}
+	else
+	{
+		
+	}
+	return $response;
 }
