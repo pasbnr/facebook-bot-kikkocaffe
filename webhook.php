@@ -32,7 +32,7 @@ Le invio la brochure con le nostre offerte.";
 	}
 	else
 	{
-		
+		$response = "Ciao";
 	}
 	return $response;
 }
