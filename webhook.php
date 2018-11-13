@@ -10,7 +10,8 @@ foreach ($messages as $message)
 	if($message->text)
 	{
 		$response = processRequest($message->text);
-		$bot->sendTextMessage($recipientId, $response);
+		if($response!="")
+			$bot->sendTextMessage($recipientId, $response);
 	}
 }
 
