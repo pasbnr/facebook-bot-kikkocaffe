@@ -19,7 +19,7 @@ function processRequest($text)
 	$text = trim($text);
 	$text = strtolower($text);
 	$response = "";
-	if($text=="kikko promo city")
+	 if($text=="kikko promo city")
 	{
 		$response = "Lei puo aderire alle Promo City se risiede tra le seguenti zone:
 
@@ -30,8 +30,13 @@ Reggio Calabria città
 
 Le invio la brochure con le nostre offerte.";
 	}
+	elseif($text=="prova")
+	{
+		$response = "prova di risposta automatica";
+	}
 	else
 	{
+		$response = "Ciao, presto un nostro operatore sarà a tua completa disposizione. Grazie!";
 	}
 	return $response;
 }
