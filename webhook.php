@@ -30,10 +30,6 @@ Reggio Calabria città
 
 Le invio la brochure con le nostre offerte.";
 	}
-	elseif($text=="prova")
-	{
-		$response = "prova di risposta automatica";
-	}
 	else
 	{
 		$response = "Ciao, presto un nostro operatore sarà a tua completa disposizione. Grazie!";
