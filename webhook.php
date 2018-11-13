@@ -32,7 +32,7 @@ Le invio la brochure con le nostre offerte.";
 	}
 	else
 	{
-		$response = "Ciao, presto un nostro operatore sarà a tua completa disposizione. Grazie!";
+		$response = "";
 	}
 	return $response;
 }
