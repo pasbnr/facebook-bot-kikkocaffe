@@ -9,7 +9,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text)
 	{
-		$url = "https://graph.facebook.com/v2.6/me/messages?access_token=".FACEBOOK_PAGE_ACCESS_TOKEN;
+		/*$url = "https://graph.facebook.com/v2.6/me/messages?access_token=".FACEBOOK_PAGE_ACCESS_TOKEN;
 		$recipient = new \stdClass();
 		$recipient->id = $recipientId;
 		$message = new \stdClass();
@@ -21,12 +21,12 @@ foreach ($messages as $message)
 		
 		$message->buttons = [$button1,$button1];
 		$message->attachment = "risposta bottoni";
-		$parameters = ['recipient' => $recipient, 'message' => $message];
+		$parameters = ['recipient' => $recipient, 'message' => $message];*/
 		
 		$response = processRequest($message->text);
 		if($response=="test")
 		   $bot->executePost($url, $parameters);
-		elseif($response!="")
+		//elseif($response!="")
 		   $bot->sendTextMessage($recipientId, $response);
 		
 	}
