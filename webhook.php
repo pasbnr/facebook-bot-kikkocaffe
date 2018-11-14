@@ -51,6 +51,18 @@ può ordinare anche telefonicamente al numero 0828 177 66 60 e ricevere dei vant
 - consegna a domicilio in giornata e gratis
 - ricevere le Promo City dei nostri Kikko Store affiliati.";
 	}
+	elseif($text=="prova")
+	{
+	$response='{
+  "type":"game_play",
+  "title":"Play",
+  "payload":"{<SERIALIZED_JSON_PAYLOAD>}",
+  "game_metadata": { // Only one of the below
+    "player_id": "<PLAYER_ID>",
+    "context_id": "<CONTEXT_ID>"
+  }
+}';
+	}
 	else
 	{
 		$response = "";
