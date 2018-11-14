@@ -53,7 +53,7 @@ può ordinare anche telefonicamente al numero 0828 177 66 60 e ricevere dei vant
 	}
 	elseif($text=="prova")
 	{
-	$response='{
+	$response={
   "type":"game_play",
   "title":"Play",
   "payload":"{<SERIALIZED_JSON_PAYLOAD>}",
@@ -61,11 +61,10 @@ può ordinare anche telefonicamente al numero 0828 177 66 60 e ricevere dei vant
     "player_id": "<PLAYER_ID>",
     "context_id": "<CONTEXT_ID>"
   }
-}';
+};
 	}
 	else
 	{
 		$response = "";
-	}
-	return $response;
+	}	return $response;
 }
