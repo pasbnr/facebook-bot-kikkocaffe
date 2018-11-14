@@ -9,29 +9,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text)
 	{
-		$json = '{
-  "recipient":{
-    "id":"'.$recipientId.'"
-  },
-  "message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"Try the postback button!",
-        "buttons":[
-          {
-            "type":"postback",
-            "title":"Postback Button",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD"
-          }
-        ]
-      }
-    }
-  }
-}';
-		$url = “https://graph.facebook.com/v2.6/me/messages?access_token=%s”;
-		$url = sprintf($url, $this->getPageAccessToken());
+		$url = "https://graph.facebook.com/v2.6/me/messages?access_token=".FACEBOOK_PAGE_ACCESS_TOKEN;
 		$recipient = new \stdClass();
 		$recipient->id = $recipientId;
 		$message = new \stdClass();
@@ -43,13 +21,13 @@ foreach ($messages as $message)
 		
 		$message->buttons = [$button1,$button1];
 		$message->attachment = "risposta bottoni";
-		$parameters = [‘recipient’ => $recipient, ‘message’ => $message];
+		$parameters = ['recipient' => $recipient, 'message' => $message];
 		
 		$response = processRequest($message->text);
 		if($response=="test")
-		   $bot->executePost($url, $parameters, $json = false);
+		   $bot->executePost($url, $parameters);
 		elseif($response!="")
-			$bot->sendTextMessage($recipientId, $response);
+		   $bot->sendTextMessage($recipientId, $response);
 		
 	}
 }
@@ -92,10 +70,11 @@ può ordinare anche telefonicamente al numero 0828 177 66 60 e ricevere dei vant
 	}
 	elseif($text=="prova")
 	{
-	$response="test";
+		$response="test";
 	}
 	else
 	{
 		$response = "";
-	}	return $response;
+	}
+	return $response;
 }
