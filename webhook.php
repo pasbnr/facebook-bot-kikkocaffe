@@ -24,8 +24,8 @@ foreach ($messages as $message)
 		$parameters = ['recipient' => $recipient, 'message' => $message];*/
 		
 		$response = processRequest($message->text);
-		if($response=="test")
-		   $bot->executePost($url, $parameters);
+		//if($response=="test")
+		   //$bot->executePost($url, $parameters);
 		//elseif($response!="")
 		   $bot->sendTextMessage($recipientId, $response);
 		
